@@ -1,0 +1,27 @@
+{
+  "name": "diagnostic-tester-application",
+  "version": "1.0.0",
+  "description": "Diagnostic Tester Apllication for Automotive Academy 11",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmazurkiewicz01/diagnostic-tester-application.git"
+  },
+  "keywords": [
+    "mqtt",
+    "javascript",
+    "automotive"
+  ],
+  "author": "bartosz.mazurkiewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmazurkiewicz01/diagnostic-tester-application/issues"
+  },
+  "homepage": "https://github.com/bmazurkiewicz01/diagnostic-tester-application#readme",
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  }
+}
