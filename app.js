@@ -26,7 +26,7 @@ client.on('connect', () => {
 
 client.on('message', (topic, payload) => {
     wss.clients.forEach((client) => {
-        client.send(payload);
+        client.send(payload.toString());
     });
     console.log('Received Message:', topic, payload.toString());
 });
