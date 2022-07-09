@@ -46,6 +46,6 @@ app.use((error, req, res, next) => {
   res.status(500).render("500");
 });
 
-app.listen(port);
+app.listen(process.env.PORT || port);
 
 

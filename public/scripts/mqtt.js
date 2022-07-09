@@ -1,4 +1,4 @@
-let socket = new WebSocket("ws://localhost:3000/messages");
+let socket = new WebSocket(`ws://${window.location.host}/messages`);
 
 socket.onopen = (e) => {
     console.log("WebSocket is connected");
