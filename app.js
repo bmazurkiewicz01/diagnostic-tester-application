@@ -13,7 +13,7 @@ const publishTopic = 'topic/ignition';
 
 const expressWs = require("express-ws")(app);
 
-expressWs.app.ws('/messages', function(ws, req){});
+expressWs.app.ws('/messages', (ws, req) => {});
 const wss = expressWs.getWss('/messages');
 
 const client = mqttClient.connect();
@@ -25,9 +25,8 @@ client.on('connect', () => {
 });
 
 client.on('message', (topic, payload) => {
-    buffer = payload;
     wss.clients.forEach((client) => {
-        client.send(buffer);
+        client.send(payload);
     });
     console.log('Received Message:', topic, payload);
 });
