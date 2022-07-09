@@ -8,7 +8,7 @@ const port = 3000;
 
 const app = express();
 
-const subscribeTopic = 'topic/ignition';
+const subscribeTopic = 'topic/logs';
 const publishTopic = 'topic/ignition';
 
 const expressWs = require("express-ws")(app);
@@ -28,7 +28,7 @@ client.on('message', (topic, payload) => {
     wss.clients.forEach((client) => {
         client.send(payload);
     });
-    console.log('Received Message:', topic, payload);
+    console.log('Received Message:', topic, payload.toString());
 });
 
 app.set("views", path.join(__dirname, "views"));
