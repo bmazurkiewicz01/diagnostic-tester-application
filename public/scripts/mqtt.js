@@ -7,6 +7,6 @@ socket.onopen = (e) => {
 socket.onmessage = (message) => {
     const newMessage = document.createElement("p");
     newMessage.textContent = message;
-    document.getElementById("mqttLogs").appendChild(newMessage);
+    document.querySelector(".mqttLogs").appendChild(newMessage);
     console.log(message);
 } 
