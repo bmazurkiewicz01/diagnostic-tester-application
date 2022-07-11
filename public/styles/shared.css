@@ -1,5 +1,5 @@
 :root {
-  --bkg: linear-gradient(to top, #0f0915, #050307);
+  --bkg: #100916;
   --dark: #050307;
   --text: #f9f6fe;
   --accent: #4334e5;
@@ -13,6 +13,7 @@
 body {
   margin: 0;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -137,4 +138,63 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   border-color: var(--accent);
   background-color: var(--accent);
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  #container {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  .left {
+    height: 2000px;
+    margin-inline: 2rem;
+  }
+
+  .right {
+    height: 2000px;
+    border-radius: 20px 0 0 20px;
+    margin-bottom: 2rem;
+    margin-inline: 2rem;
+  }
+
+  .mqttLogs {
+    font-size: 0.7rem;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+  }
+
+  .buttonItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button h2 {
+    font-size: 1rem;
+  }
 }
