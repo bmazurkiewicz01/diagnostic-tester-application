@@ -22,6 +22,17 @@ h1 {
   color: var(--accent);
 }
 
+.mqttLogs > h2 {
+  margin: 5px 0px 5px 0px;
+  position:absolute;
+}
+
+.terminal > h2{
+  padding-left: 10px;
+  margin: 5px 0px 5px 0px;
+  position: absolute;
+}
+
 #container {
   display: grid;
   margin: 0 auto;
@@ -61,16 +72,49 @@ h1 {
   font-family: 'JetBrains Mono', monospace;
   height: 100%;
   width: 200px;
+  border-radius: 10px;
 }
 
 .redbutton {
   background-color: rgb(185, 40, 40);
 }
+.redbutton:hover{
+  background-color: rgb(185, 72, 72);;
+}
+
+.greenbutton {
+  background-color: rgb(40, 185, 52);
+}
+.greenbutton:hover{
+  background-color: rgb(76, 190, 86);
+}
+
+.greybutton {
+  background-color: rgb(122, 119, 119);
+}
+.greybutton:hover{
+  background-color: rgb(182, 179, 179);
+}
+
+.darkgreybutton {
+  background-color: rgb(75, 75, 75);
+}
+.darkgreybutton:hover{
+  background-color: rgb(112, 112, 112);
+}
 
 .terminal {
+  position: relative;
   height: 50%;
   width: 100%;
   background-color: var(--light);
+}
+.terminal-input{
+  position: absolute;
+  bottom: 0px;
+  height: 2rem;
+  width: 99%;
+  border-radius: 3px;
 }
 
 /* Blink and webkit browsers */
