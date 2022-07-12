@@ -1,5 +1,6 @@
-let socket = new WebSocket(`ws://${window.location.host}/messages`);
+socket = new WebSocket(`ws://${window.location.host}/messages`);
 
+let count = window.count;
 const leftDiv = document.querySelector(".left");
 const mqttLogsDiv = document.querySelector(".mqttLogs");
 
@@ -8,6 +9,7 @@ socket.onopen = (e) => {
 };
 
 socket.onmessage = (message) => {
+    let activeModes = window.activeModes;
     while (getCount(mqttLogsDiv, false) > 1000) {
         mqttLogsDiv.firstChild.remove();
     }
@@ -25,8 +27,12 @@ socket.onmessage = (message) => {
     newMessageElement.textContent = `[${severity}] ${time} ${component}: ${msgData}`;
     newMessageElement.style.color = toColorCode(severity);
 
-    mqttLogsDiv.appendChild(newMessageElement);
-    if (isUserNearBottom(leftDiv)) {
-        leftDiv.scrollTop = newMessageElement.offsetTop;
+    console.log(activeModes);
+    if(activeModes[severityToInt(severity)] == true)
+    {
+        mqttLogsDiv.appendChild(newMessageElement);
+        if (isUserNearBottom(leftDiv)) {
+            leftDiv.scrollTop = newMessageElement.offsetTop;
+        }
     }
 }

@@ -19,6 +19,27 @@ function toColorCode(severity) {
     return colorCode;
 }
 
+function severityToInt(severity){
+    let severityVal = 0;
+    switch (severity) {
+        case "INFO":
+            severityVal = 2;
+            break;
+        case "WARNING":
+            severityVal = 1;
+            break;
+        case "ERROR":
+            severityVal = 0
+            break;
+        case "DEBUG":
+            severityVal = 3
+            break;
+        default:
+            break;
+    }
+    return severityVal; 
+}
+
 function getCount(parent, getChildrensChildren) {
     var relevantChildren = 0;
     var children = parent.childNodes.length;
