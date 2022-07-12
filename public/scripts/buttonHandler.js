@@ -1,4 +1,4 @@
-let socket = new WebSocket(`wss://${window.location.host}/messages`);
+let socket = new WebSocket(`ws://${window.location.host}/messages`);
 
 const rightDiv = document.querySelector(".right");
 const terminal = document.querySelector(".terminal");

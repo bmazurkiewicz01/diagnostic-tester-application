@@ -1,4 +1,4 @@
-socket = new WebSocket(`wss://${window.location.host}/messages`);
+socket = new WebSocket(`ws://${window.location.host}/messages`);
 
 let count = window.count;
 const leftDiv = document.querySelector(".left");
