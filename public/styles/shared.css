@@ -23,15 +23,12 @@ h1 {
   color: var(--accent);
 }
 
-.mqttLogs > h2 {
-  margin: 5px 0px 5px 0px;
+.left > h2 {
+  margin: 10px 0px 5px 15px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
   position:absolute;
-}
-
-.terminal > h2{
-  padding-left: 10px;
-  margin: 5px 0px 5px 0px;
-  position: absolute;
+  background-color: rgba(0,0,0,0.5);
 }
 
 #container {
@@ -69,6 +66,12 @@ h1 {
 
 }
 
+.terminal{
+  overflow-y: auto;
+}
+.terminal > p{
+  padding-left: 10px;
+}
 .button {
   font-family: 'JetBrains Mono', monospace;
   height: 100%;
@@ -105,17 +108,16 @@ h1 {
 }
 
 .terminal {
-  position: relative;
-  height: 50%;
+  height: 45%;
   width: 100%;
   background-color: var(--light);
 }
 .terminal-input{
   position: absolute;
-  bottom: 0px;
+  bottom: 60px;
   height: 2rem;
-  width: 99%;
-  border-radius: 3px;
+  width: 45.2%;
+  border-radius: 5px;
 }
 
 /* Blink and webkit browsers */
@@ -196,5 +198,8 @@ h1 {
 
   .button h2 {
     font-size: 1rem;
+  }
+  .terminal > p{
+    font-size: 10px;
   }
 }

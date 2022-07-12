@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagnostic Tester Application</title>
+    <script src="/scripts/utils.js" defer></script>
+    <script src="/scripts/mqtt.js" defer></script>
+    <script src="/scripts/buttonHandler.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/shared.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diagnostic Tester Application</title>
-  <script src="/scripts/utils.js" defer></script>
-  <script src="/scripts/mqtt.js" defer></script>
-  <script src="/scripts/buttonHandler.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/shared.css" />
-</head>
-
-<body>
-  <h1>Diagnostic Tester Application</h1>
-  <div id="container">
-    <div class="left">
-      <div class="mqttLogs">
-          <h2>LOGS</h2>
-      </div>
-    </div>
-
-    <div class="right">
-      <div class="buttons">
-        <div class="buttonItem">
-          <button class="button redbutton" id="sleepBtn">
-            <h2>SLEEP</h2>
-          </button>
-        </div>
-        <div class="buttonItem">
-          <button class="button greenbutton">
-            <h2>BUTTON2</h2>
-          </button>
-        </div>
-        <div class="buttonItem">
-          <button class="button greybutton">
-            <h2>BUTTON3</h2>
-          </button>
-        </div>
-        <div class="buttonItem">
-          <button class="button darkgreybutton">
-            <h2>BUTTON4</h2>
-          </button>
+  <body>
+    <h1>Diagnostic Tester Application</h1>
+    <div id="container">
+      <div class="left">
+        <h2>LOGS</h2>
+        <div class="mqttLogs">
         </div>
       </div>
-      <div class="terminal">
-        <h2>TERMINAL</h2>
+
+      <div class="right">
+        <div class="buttons">
+          <div class="buttonItem">
+            <button class="button redbutton" id="sleepBtn">
+              <h2>SLEEP</h2>
+            </button>
+          </div>
+          <div class="buttonItem">
+            <button class="button greenbutton">
+              <h2>BUTTON2</h2>
+            </button>
+          </div>
+          <div class="buttonItem">
+            <button class="button greybutton">
+              <h2>BUTTON3</h2>
+            </button>
+          </div>
+          <div class="buttonItem">
+            <button class="button darkgreybutton">
+              <h2>BUTTON4</h2>
+            </button>
+          </div>
+        </div>
+        <div class="terminal"></div>
         <input type="text" class="terminal-input" />
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
