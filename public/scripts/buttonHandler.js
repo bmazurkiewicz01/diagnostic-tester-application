@@ -23,9 +23,10 @@ window.count = 0;
 let currentMode = modes[window.count];
 
 modeBtn.addEventListener("click", () => {
-    if(window.count == 4)
-        window.count = 0;
+    if(window.count == 3)
+        window.count = -1;
     currentMode = modes[++window.count];
+
     switch(currentMode)
     {
         case "ERROR":
@@ -43,6 +44,7 @@ modeBtn.addEventListener("click", () => {
     }
     const newMessageElement = document.createElement("p");
     newMessageElement.textContent = "LOG MODE: " + currentMode;
+    console.log(currentMode)
     terminal.appendChild(newMessageElement);
     if (isUserNearBottom(terminal)) {
         terminal.scrollTop = newMessageElement.offsetTop;
