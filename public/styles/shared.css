@@ -23,12 +23,12 @@ h1 {
   color: var(--accent);
 }
 
-.left > h2 {
+.left>h2 {
   margin: 10px 0px 5px 15px;
   padding: 5px 10px 5px 10px;
   border-radius: 15px;
-  position:absolute;
-  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #container {
@@ -60,18 +60,33 @@ h1 {
 
 .buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   height: 50%;
-
+  margin-top: 2rem;
 }
 
-.terminal{
+.terminal {
   overflow-y: auto;
+  height: 45%;
+  width: 100%;
+  background-color: var(--light);
 }
-.terminal > p{
+
+.terminal>p {
   padding-left: 10px;
 }
+
+.terminal-input {
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid var(--dark);
+  font-size: 1.75rem;
+  margin: 0;
+  outline: none;
+}
+
 .button {
   font-family: 'JetBrains Mono', monospace;
   height: 100%;
@@ -82,42 +97,34 @@ h1 {
 .redbutton {
   background-color: rgb(185, 40, 40);
 }
-.redbutton:hover{
-  background-color: rgb(185, 72, 72);;
+
+.redbutton:hover {
+  background-color: rgb(185, 72, 72);
+  ;
 }
 
 .greenbutton {
   background-color: rgb(40, 185, 52);
 }
-.greenbutton:hover{
+
+.greenbutton:hover {
   background-color: rgb(76, 190, 86);
 }
 
 .greybutton {
   background-color: rgb(122, 119, 119);
 }
-.greybutton:hover{
+
+.greybutton:hover {
   background-color: rgb(182, 179, 179);
 }
 
 .darkgreybutton {
   background-color: rgb(75, 75, 75);
 }
-.darkgreybutton:hover{
-  background-color: rgb(112, 112, 112);
-}
 
-.terminal {
-  height: 45%;
-  width: 100%;
-  background-color: var(--light);
-}
-.terminal-input{
-  position: absolute;
-  bottom: 60px;
-  height: 2rem;
-  width: 45.2%;
-  border-radius: 5px;
+.darkgreybutton:hover {
+  background-color: rgb(112, 112, 112);
 }
 
 /* Blink and webkit browsers */
@@ -133,7 +140,7 @@ h1 {
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 0.3vw solid var(--light);
+  border: 0.3vw solid var(--accent);
   border-radius: 100vw;
 }
 
@@ -199,7 +206,8 @@ h1 {
   .button h2 {
     font-size: 1rem;
   }
-  .terminal > p{
+
+  .terminal>p {
     font-size: 10px;
   }
 }
