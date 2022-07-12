@@ -4,7 +4,7 @@
   "description": "Diagnostic Tester Application for Automotive Academy 11",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
