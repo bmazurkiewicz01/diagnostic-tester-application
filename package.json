@@ -1,7 +1,7 @@
 {
   "name": "diagnostic-tester-application",
   "version": "1.0.0",
-  "description": "Diagnostic Tester Apllication for Automotive Academy 11",
+  "description": "Diagnostic Tester Application for Automotive Academy 11",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
