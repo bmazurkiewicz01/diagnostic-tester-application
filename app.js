@@ -24,8 +24,8 @@ client.on('connect', () => {
 
 expressWs.app.ws('/messages', (ws, req) => {
   ws.on('message', (message) => {
-    console.log(message);
     publish(client, publishTopic, message);
+    console.log(`Published message: ${message} on topic: ${publishTopic}`);
   });
 });
 
