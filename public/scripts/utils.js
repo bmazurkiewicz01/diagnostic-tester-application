@@ -54,8 +54,26 @@ function getCount(parent, getChildrensChildren) {
 }
 
 function isUserNearBottom(scrollContainer) {
-    const threshold = 100;
+    const threshold = 200;
     const position = scrollContainer.scrollTop + scrollContainer.offsetHeight;
     const height = scrollContainer.scrollHeight;
     return position > height - threshold;
+}
+
+function appendNewElement(parent, text, color)
+{
+    const newMessageElement = document.createElement("p");
+    newMessageElement.textContent = text;
+    newMessageElement.style.color = color;
+    parent.appendChild(newMessageElement);
+
+    return newMessageElement;
+}
+
+function sendMessage(terminal, message, log) {
+    socket.send(message);
+    const element = appendNewElement(terminal, log, "#8be98b");
+    if (isUserNearBottom(terminal)) {
+        terminal.scrollTop = element.offsetTop;
+    }
 }

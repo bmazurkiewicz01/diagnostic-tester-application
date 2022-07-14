@@ -1,21 +1,28 @@
-let socket = new WebSocket(`wss://${window.location.host}/messages`);
+let socket = new WebSocket(`ws://${window.location.host}/messages`);
 
 const rightDiv = document.querySelector(".right");
 const terminal = document.querySelector(".terminal");
 
 const sleepBtn = document.getElementById("sleepBtn");
+const accBtn = document.getElementById("accBtn");
+const fullOpBtn = document.getElementById("fullOpBtn");
 const modeBtn = document.getElementById("modeBtn");
 
 sleepBtn.addEventListener("click", () => {
-    let message = "sleep message (TEST)"
-    socket.send(message);
-    const newMessageElement = document.createElement("p");
-    newMessageElement.textContent = message;
-    terminal.appendChild(newMessageElement);
-    if (isUserNearBottom(terminal)) {
-        terminal.scrollTop = newMessageElement.offsetTop;
-    }
-})
+    const message = "expressjs///3///0\0";
+    sendMessage(terminal, message, "[CLIENT] Sleep message sent");
+    
+});
+
+accBtn.addEventListener("click", () => {
+    const message = "expressjs///3///1\0";
+    sendMessage(terminal, message, "[CLIENT] ACC message sent");
+});
+
+fullOpBtn.addEventListener("click", () => {
+    const message = "expressjs///3///2\0";
+    sendMessage(terminal, message, "[CLIENT] FullOP message sent");
+});
 
 const modes = ["ERROR","WARNING", "INFO", "DEBUG"];
 window.activeModes = [true, false, false, false];
@@ -42,11 +49,8 @@ modeBtn.addEventListener("click", () => {
             window.activeModes = [true, true, true, true];
             break;
     }
-    const newMessageElement = document.createElement("p");
-    newMessageElement.textContent = "LOG MODE: " + currentMode;
-    console.log(currentMode)
-    terminal.appendChild(newMessageElement);
+    const element = appendNewElement(terminal, "[CLIENT] LOG MODE: " + currentMode, "#8be98b");
     if (isUserNearBottom(terminal)) {
-        terminal.scrollTop = newMessageElement.offsetTop;
+        terminal.scrollTop = element.offsetTop;
     }
 })
