@@ -6,6 +6,7 @@ const terminal = document.querySelector(".terminal");
 const sleepBtn = document.getElementById("sleepBtn");
 const accBtn = document.getElementById("accBtn");
 const fullOpBtn = document.getElementById("fullOpBtn");
+const softResetBtn = document.getElementById("softResetBtn");
 const modeBtn = document.getElementById("modeBtn");
 
 sleepBtn.addEventListener("click", () => {
